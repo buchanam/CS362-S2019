@@ -1202,7 +1202,7 @@ int updateCoins(int player, struct gameState *state, int bonus)
 // refactored adventurer card case
 int adventurerCase(int currentPlayer, struct gameState *state, int z, int cardDrawn, int drawntreasure, int temphand[MAX_HAND])
 {
-  while(drawntreasure<2)
+  while(drawntreasure<=2)
   {
   	if (state->deckCount[currentPlayer] <1)
     {
@@ -1233,7 +1233,7 @@ int adventurerCase(int currentPlayer, struct gameState *state, int z, int cardDr
 int smithyCase(int currentPlayer, struct gameState *state, int handPos)
 {
   //+3 Cards
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i <= 3; i++)
 	{
 	  drawCard(currentPlayer, state);
 	}
@@ -1252,7 +1252,7 @@ int councilRoomCase(int currentPlayer, struct gameState *state, int handPos)
 	}
 			
   //+1 Buy
-  state->numBuys++;
+  state->numBuys--;
 			
   //Each other player draws a card
   for (int i = 0; i < state->numPlayers; i++)
@@ -1342,7 +1342,7 @@ int mineCase(int currentPlayer, struct gameState *state, int choice1, int choice
 	  return -1;
 	}
 		
-  if (choice2 > treasure_map || choice2 < curse)
+  if (choice1 > treasure_map || choice1 < curse)
 	{
 	  return -1;
 	}
