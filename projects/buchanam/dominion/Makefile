@@ -41,14 +41,19 @@ all: playdom player
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
 
-tests.out: unittest1.c unittest2.c dominion.c
+tests.out: unittest1.c unittest2.c unittest3.c rngs.c dominion.c
 	echo "Result for running dominion tests:" > tests.out
 	echo "unittest1.c:" >> tests.out
-	gcc -o unittest1 dominion.c unittest1.c $(CFLAGS)
+	gcc -o unittest1 dominion.c rngs.c unittest1.c $(CFLAGS)
 	./unittest1 >> tests.out
 	gcov dominion.c >> tests.out
 	
 	echo "unittest2.c:" >> tests.out
-	gcc -o unittest2 dominion.c unittest2.c $(CFLAGS)
+	gcc -o unittest2 dominion.c rngs.c unittest2.c $(CFLAGS)
 	./unittest2 >> tests.out
+	gcov dominion.c >> tests.out
+
+	echo "unittest3.c:" >> tests.out
+	gcc -o unittest3 dominion.c rngs.c unittest3.c $(CFLAGS)
+	./unittest3 >> tests.out
 	gcov dominion.c >> tests.out

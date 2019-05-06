@@ -1,0 +1,25 @@
+Result for running dominion tests:
+unittest1.c:
+adventurerRefactored(): PASS when handcount doesn't change while drawntreasure > 3
+adventurerRefactored(): PASS when handcount changes while drawntreasure == 2
+adventurerRefactored(): PASS when handcount changes while drawntreasure == 0
+adventurerRefactored(): FAIL when handcount doesn't change while drawntreasure == -2
+File 'dominion.c'
+Lines executed:21.68% of 558
+Creating 'dominion.c.gcov'
+
+unittest2.c:
+smithyRefactored(): PASS when handcount changes when Smithy is called
+File 'dominion.c'
+Lines executed:19.18% of 558
+Creating 'dominion.c.gcov'
+
+unittest3.c:
+councilRoomRefactored(): PASS when handcount changes to previous + 3 when CR is called
+councilRoomRefactored(): PASS when handcount changes to previous + 3 when CR is called
+councilRoomRefactored(): PASS when handcount changes to previous + 3 when CR is called
+councilRoomRefactored(): PASS when handcount changes to previous + 3 when CR is called
+File 'dominion.c'
+Lines executed:19.18% of 558
+Creating 'dominion.c.gcov'
+

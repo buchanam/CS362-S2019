@@ -1,5 +1,4 @@
 #include "dominion.h"
-#include "dominion.c"
 #include "dominion_helpers.h"
 #include "rngs.h"
 #include <stdio.h>
@@ -13,7 +12,7 @@ int testAdventurerRefactored()
     sea_hag, tribute, smithy};
     struct gameState G;
 
-    initializeGame(2, k, 2, &G);
+    initializeGame(2, k, 20, &G);
     int z;
     int cardDrawn;
     int drawntreasure = 3;
