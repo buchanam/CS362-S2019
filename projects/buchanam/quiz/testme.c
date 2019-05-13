@@ -12,16 +12,12 @@ char inputChar()
 
 char *inputString()
 {
-    // TODO: rewrite this function
-    int length = (int)rand() % 10;
-    printf("%i", length);
-    char *randomString[11];
-    char selection[] = "reset\0";
-    for (int i = 0; i < length - 1; i++)
-    {
-        randomString[i] = selection[rand() % (sizeof(selection) - 1)];
-    }
-    return randomString;
+    char *testString = "reset\0";
+    int length = rand() % 10;
+    memmove(testString, testString, length);
+
+
+    return testString;
 }
 
 void testme()
