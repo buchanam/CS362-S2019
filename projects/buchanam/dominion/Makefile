@@ -40,6 +40,8 @@ all: playdom player
 
 randomtestresults: dominion.o
 	gcc -o test randomtestcard1.c randomtestadventurer.c
+	gcov randomtestcard1.c >> tests1.out
+	gcov randomtestadventurer.c >> tests2.out
 
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe
