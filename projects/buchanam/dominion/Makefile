@@ -38,5 +38,8 @@ player: player.c interface.o
 
 all: playdom player 
 
+randomtestresults: dominion.o
+	gcc -o test randomtestcard1.c randomtestadventurer.c
+
 clean:
 	rm -f *.o playdom.exe playdom player player.exe  *.gcov *.gcda *.gcno *.so *.out testDrawCard testDrawCard.exe

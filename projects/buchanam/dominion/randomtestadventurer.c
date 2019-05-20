@@ -35,7 +35,25 @@ int adventurerCase(int currentPlayer, struct gameState *state, int z, int cardDr
 
 int randomTest()
 {
-    
+    int numPlayers = rand() % (4-2 + 1) + 2;
+    int currentPlayer = rand() % (numPlayers - 2 + 1) + 2;
+    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse,
+        sea_hag, tribute, smithy};
+    struct gameState* gS = newGame();
+    //struct gameState gS;
+
+    initializeGame(numPlayers, kingdomCards, 20, gS);
+    int deckCount = gS->handCount[currentPlayer];
+    int handPos = rand() % (deckCount) + 1;
+
+    adventurerCase(currentPlayer, gS, handPos);
+    printf(gS->deckCount);
+
+    if(gS->deckCount != (deckCount + 2))
+    {
+        printf("ERROR: ");
+        exit(200);
+    }
 }
 
 int main(int argc, char *argv[])
