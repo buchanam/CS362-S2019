@@ -17,7 +17,7 @@ int testCRRefactored()
     int currentPlayer = whoseTurn(&G);
 
     int previousHandCount = G.handCount[currentPlayer];
-    councilRoomCase(currentPlayer, &G, handPos);
+    councilRoomRef(handPos, &G);
     if (*(G.handCount) == previousHandCount + 3)
         printf("councilRoomRefactored(): PASS when handcount changes to previous + 3 when CR is called\n");
     else

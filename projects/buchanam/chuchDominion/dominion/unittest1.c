@@ -36,7 +36,7 @@ int testAdventurerRefactored()
 
     previousHandCount = G.handCount[currentPlayer];
     drawntreasure = 0;
-    adventurerCase(currentPlayer, &G, z, cardDrawn, drawntreasure, temphand);
+    adventurerRef(&G);
     if (*(G.handCount) != previousHandCount)
         printf("adventurerRefactored(): PASS when handcount changes while drawntreasure == 0\n");
     else

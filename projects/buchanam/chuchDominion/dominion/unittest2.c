@@ -17,7 +17,7 @@ int testSmithyRefactored()
     int currentPlayer = whoseTurn(&G);
 
     int previousHandCount = G.handCount[currentPlayer];
-    smithyCase(currentPlayer, &G, handPos);
+    smithyRef(handPos, &G);
     if (*(G.handCount) != previousHandCount)
         printf("smithyRefactored(): PASS when handcount changes when Smithy is called\n");
     else
